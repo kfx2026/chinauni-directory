@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Chinese Pharmacy / Chinese Materia Medica</title><style>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0a1628;--gold:#c9a96e;--gold-l:#e8d5b0;--cream:#faf7f0;--white:#fff;--text:#1a1a2e;--text-l:#5a6070;--border:rgba(0,0,0,.08);--r:16px}
+body{font-family:Inter,sans-serif;color:var(--text);background:var(--cream);line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,22,40,.94);backdrop-filter:blur(20px);height:72px}
+.ni{max-width:1280px;margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nl{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:10px}
+.nlicon{width:34px;height:34px;background:linear-gradient(135deg,var(--gold),#a6844a);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:15px;font-weight:900}
+.nli{display:flex;gap:6px}
+.nli a{text-decoration:none;color:rgba(255,255,255,.75);font-size:14px;padding:10px 18px;border-radius:8px}
+.nli a:hover,.nli a.ac{background:rgba(201,169,110,.15);color:var(--gold)}
+.lb{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:6px;font-size:11px;cursor:pointer;color:rgba(255,255,255,.6);font-family:inherit;text-transform:uppercase}
+.lb.on,.lb:hover{border-color:var(--gold);color:var(--gold)}
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80) center/cover;opacity:.35}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,40,.7),rgba(10,22,40,.5),rgba(10,22,40,.85))}
+.hero-content{position:relative;z-index:2;max-width:800px;padding:120px 40px 80px}
+.hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:600;letter-spacing:3px;padding:8px 20px;margin-bottom:28px;text-transform:uppercase}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,54px);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px}
+.hero h1 span{color:var(--gold)}.hero p{font-size:17px;color:rgba(255,255,255,.7);font-weight:300;max-width:500px;margin-bottom:32px}
+.search-box{display:flex;gap:12px;max-width:500px}
+.search-box input{flex:1;padding:14px 20px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:white;border-radius:8px;font-size:15px;font-family:inherit;outline:none}
+.search-box input::placeholder{color:rgba(255,255,255,.5)}.search-box input:focus{border-color:var(--gold)}
+.search-box button{padding:14px 28px;background:var(--gold);color:var(--navy);border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:.2s}
+.search-box button:hover{background:#d4b87a}
+.hero-stats{display:flex;gap:60px;margin-top:40px}
+.hs-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--gold)}.hs-label{font-size:13px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1.5px}
+.section{padding:100px 32px;max-width:1200px;margin:0 auto}
+.section-dark{background:var(--navy);max-width:100%;padding:100px 32px}
+.section-dark .section-title{color:var(--white)}.section-dark .section-sub{color:rgba(255,255,255,.5)}
+.section-header{text-align:center;margin-bottom:56px}
+.section-label{font-size:11px;font-weight:600;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,36px);font-weight:700;margin-bottom:12px}
+.section-sub{font-size:16px;color:var(--text-l)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.card-grid-wide{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.card{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:.35s;text-decoration:none;color:inherit;display:block}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.12)}
+.card-img{height:180px;background-size:cover;background-position:center}
+.card-body{padding:20px 24px 24px}
+.card-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:6px}
+.card-sub{font-size:13px;color:var(--text-l)}
+.tier-card{background:var(--white);border-radius:var(--r);padding:36px 32px;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:.35s;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden}
+.tier-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.tier-card.c9::before{background:#b8860b}.tier-card.a985::before{background:#2471a3}.tier-card.a211::before{background:#1e8449}
+.tier-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.12)}
+.tier-icon{font-size:36px;margin-bottom:16px}
+.tier-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:8px}
+.tier-card p{font-size:14px;color:var(--text-l)}
+.prog-card{background:var(--white);border-radius:var(--r);padding:24px 20px;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:.3s;text-decoration:none;color:inherit;border-top:3px solid transparent}
+.prog-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
+.prog-icon{font-size:24px;margin-bottom:12px}.prog-card h3{font-size:15px;font-weight:600;margin-bottom:4px}.prog-card .prog-sub{font-size:11px;color:var(--text-l)}
+.prog-list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.uni-hero{background:var(--navy);padding:120px 32px 64px;text-align:center;color:var(--white)}
+.uni-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:8px}
+.uni-loc{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:16px}
+.tier-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:6px 16px;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.info-item{background:var(--white);border-radius:var(--r);padding:20px;box-shadow:0 2px 12px rgba(0,0,0,.04);border-left:3px solid var(--gold)}
+.info-item h4{font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.info-item p{font-size:14px;font-weight:600}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-size:14px;margin-bottom:20px;font-weight:500}
+.tier-section{margin-bottom:36px}
+.tier-section h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--gold-l)}
+.ul-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.ul-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 18px;text-decoration:none;color:var(--text);transition:.2s;display:block}
+.ul-item:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.ul-name{font-weight:600;font-size:14px}.ul-meta{font-size:11px;color:var(--text-l);margin-top:2px}
+.prog-hero{padding:120px 32px 64px;text-align:center;color:var(--white)}
+.prog-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:8px}
+.prog-sub{font-size:15px;opacity:.8}.prog-meta{font-size:13px;opacity:.6;margin-top:6px}
+.intro-section{max-width:900px;margin:0 auto;padding:80px 32px;text-align:center}
+.intro-section h2{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;margin-bottom:20px}
+.intro-section p{font-size:16px;color:var(--text-l);line-height:1.9}
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 32px 36px;text-align:center}
+footer .f-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:10px}
+footer p{font-size:13px;max-width:600px;margin:0 auto;line-height:1.8}
+footer .f-links{margin-top:20px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+footer .f-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:13px}
+footer .f-links a:hover{color:var(--gold)}footer .f-copy{margin-top:28px;font-size:11px;color:rgba(255,255,255,.3)}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+@media(max-width:768px){.nli{display:none}.hero h1{font-size:30px}.hero-stats{gap:28px;flex-wrap:wrap}.section{padding:60px 20px}.card-grid{grid-template-columns:1fr}.tier-card{grid-template-columns:1fr}}
+</style></head><body><nav><div class="ni"><a href="../index.html" class="nl"><span class="nlicon">大</span>中国大学目录</a><div class="nli"><a href="../index.html" class="ac">首页</a><a href="../cities.html">城市</a><a href="../tiers.html">学术层次</a><a href="../programs.html">专业</a></div><div><button class="lb on" onclick="location.href='../../zh/index.html'">zh</button><button class="lb " onclick="location.href='../../en/index.html'">en</button><button class="lb " onclick="location.href='../../es/index.html'">es</button><button class="lb " onclick="location.href='../../ar/index.html'">ar</button><button class="lb " onclick="location.href='../../ru/index.html'">ru</button></div></div></nav><div class="prog-hero" style="background:linear-gradient(135deg,#c0392b,var(--navy))"><h1>💉 Chinese Pharmacy / Chinese Materia Medica</h1><div class="prog-sub">中药学</div><div class="prog-meta">4 years · Chinese</div></div><div class="container"><a href="../programs.html" class="back-link">← 返回专业列表</a><p style="color:var(--text-l);font-size:15px;line-height:1.8;margin-bottom:20px">Chinese herbal medicine, TCM formulations</p><div class="tier-section"><h3>可选 (7)</h3><div class="ul-grid"><a href="../uni/fudan-university.html" class="ul-item"><div class="ul-name">Fudan University</div><div class="ul-meta">Shanghai · C9</div></a><a href="../uni/beijing-university-of-chemical-technology.html" class="ul-item"><div class="ul-name">Beijing University of Chemical Technology</div><div class="ul-meta">Beijing · 211</div></a><a href="../uni/peking-union-medical-college.html" class="ul-item"><div class="ul-name">Peking Union Medical College</div><div class="ul-meta">Beijing · 211</div></a><a href="../uni/beijing-university-of-chinese-medicine.html" class="ul-item"><div class="ul-name">Beijing University of Chinese Medicine</div><div class="ul-meta">Beijing · 211</div></a><a href="../uni/china-pharmaceutical-university.html" class="ul-item"><div class="ul-name">China Pharmaceutical University</div><div class="ul-meta">Nanjing · 211</div></a><a href="../uni/naval-medical-university.html" class="ul-item"><div class="ul-name">Naval Medical University</div><div class="ul-meta">Shanghai · 211</div></a><a href="../uni/east-china-university-of-science-and-technology.html" class="ul-item"><div class="ul-name">East China University of Science and Technology</div><div class="ul-meta">Shanghai · 211</div></a></div></div></div><footer><div class="f-brand">中国大学目录</div><p>本目录仅供参考，不提供申请服务。请通过大学官网核实信息。</p><div class="f-links"><a href="../about.html">关于</a></div><div class="f-copy">&copy; 2026</div></footer></body></html>
